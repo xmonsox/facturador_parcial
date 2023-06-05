@@ -234,7 +234,7 @@ public class DataBase {
                 }
          }
          
-         /*public Producto[] listaProductos(){
+         public Producto[] listaProductos(){
                 Producto [] listaProductos = new Producto [100];
                 try{
                     ResultSet registros = this.manipularDB.executeQuery("SELECT * FROM productos");
@@ -242,17 +242,17 @@ public class DataBase {
                     if (registros.getRow()==1) {
                         int indice = 0;
                         do{
-                            Producto temp = new Producto( registros.getString("cedula"),registros.getString("nombres"), registros.getString("apellidos"), registros.getString("telefono"), registros.getString("direccion"), registros.getString("email") );
-                            listaClientes[indice] = temp;
+                            Producto temp = new Producto( registros.getInt("id"),registros.getString("nombre"),registros.getInt("precio") );
+                            listaProductos[indice] = temp;
                             indice++;
                         }while(registros.next());
                     }
-                    return listaClientes;
+                    return listaProductos;
                 }catch(SQLException e){
                     System.out.println("Error en SELECT: "+e.getMessage());
-                    return listaClientes;
+                    return listaProductos;
                 }
-         }*/
+         }
 }
     
 

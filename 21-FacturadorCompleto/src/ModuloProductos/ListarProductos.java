@@ -1,8 +1,12 @@
 package ModuloProductos;
 
+import Clases.Persona;
+import Clases.Producto;
 import Principal.Menu;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 public class ListarProductos extends javax.swing.JFrame {
     
@@ -20,14 +24,28 @@ public class ListarProductos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setIconImage( getToolkit().createImage( ClassLoader.getSystemResource("imagenes/icono_almacenes.png") ) );
         
-        contenUsuarios.setLayout( new BoxLayout(contenUsuarios, BoxLayout.Y_AXIS) );
-        contenUsuarios.setBackground(Color.WHITE);
-        imprimirClientes();
+        contenProductos.setLayout( new BoxLayout(contenProductos, BoxLayout.Y_AXIS) );
+        contenProductos.setBackground(Color.WHITE);
+        imprimirProductos();
     }
     
-    public void imprimirClientes(){
+    public void imprimirProductos(){
+         
+         Producto listaProductos [] =( this.ventanaMenu.database.listaProductos()); 
         
-        revalidate();
+        if (listaProductos!=null) {
+            for(int i = 0; i < listaProductos.length; i++){
+                if(listaProductos[i] != null){
+                    etqTemporal = new JLabel(listaProductos[i].getId()+" - "+listaProductos[i].getNombre()+" "+listaProductos[i].getPrecio());
+                    etqTemporal.setFont(new Font("Arial", Font.PLAIN, 12));
+                    etqTemporal.setBorder(new EmptyBorder(2,10,2,10));
+                    contenProductos.add(etqTemporal);
+                }else{
+                    break;
+                }
+            }
+            revalidate();
+        }
     }
     
     @SuppressWarnings("unchecked")
@@ -37,7 +55,7 @@ public class ListarProductos extends javax.swing.JFrame {
         principalContainer = new javax.swing.JPanel();
         EtqTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        contenUsuarios = new javax.swing.JPanel();
+        contenProductos = new javax.swing.JPanel();
         btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,18 +69,18 @@ public class ListarProductos extends javax.swing.JFrame {
         EtqTitulo.setText("LISTAR PRODUCTOS");
         EtqTitulo.setToolTipText("");
 
-        javax.swing.GroupLayout contenUsuariosLayout = new javax.swing.GroupLayout(contenUsuarios);
-        contenUsuarios.setLayout(contenUsuariosLayout);
-        contenUsuariosLayout.setHorizontalGroup(
-            contenUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout contenProductosLayout = new javax.swing.GroupLayout(contenProductos);
+        contenProductos.setLayout(contenProductosLayout);
+        contenProductosLayout.setHorizontalGroup(
+            contenProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 335, Short.MAX_VALUE)
         );
-        contenUsuariosLayout.setVerticalGroup(
-            contenUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        contenProductosLayout.setVerticalGroup(
+            contenProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 299, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setViewportView(contenUsuarios);
+        jScrollPane1.setViewportView(contenProductos);
 
         btnAtras.setText("Atras");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +137,7 @@ public class ListarProductos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EtqTitulo;
     private javax.swing.JButton btnAtras;
-    private javax.swing.JPanel contenUsuarios;
+    private javax.swing.JPanel contenProductos;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel principalContainer;
     // End of variables declaration//GEN-END:variables

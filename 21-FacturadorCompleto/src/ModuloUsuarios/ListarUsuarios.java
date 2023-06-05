@@ -18,7 +18,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
     
     Menu ventanaMenu;
     String titulo;
-    
     private JLabel etqTemporal;
     
     
