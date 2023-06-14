@@ -2,6 +2,7 @@
 package ModuloProductos;
 
 import Clases.Persona;
+import Clases.Producto;
 import Principal.Alert;
 import Principal.Menu;
 import java.awt.Color;
@@ -36,7 +37,7 @@ public class ModificarProductos extends javax.swing.JFrame {
         etqPrecio = new javax.swing.JLabel();
         campoPrecio = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
-        btnRegistrar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
@@ -114,15 +115,15 @@ public class ModificarProductos extends javax.swing.JFrame {
             }
         });
 
-        btnRegistrar.setBackground(new java.awt.Color(0, 0, 153));
-        btnRegistrar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setText("MODIFICAR");
-        btnRegistrar.setEnabled(false);
-        btnRegistrar.setFocusable(false);
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        btnModificar.setBackground(new java.awt.Color(0, 0, 153));
+        btnModificar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setText("MODIFICAR");
+        btnModificar.setEnabled(false);
+        btnModificar.setFocusable(false);
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
+                btnModificarActionPerformed(evt);
             }
         });
 
@@ -159,25 +160,25 @@ public class ModificarProductos extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(contentPrincipalLayout.createSequentialGroup()
                 .addGap(65, 65, 65)
-                .addGroup(contentPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(contentPrincipalLayout.createSequentialGroup()
-                        .addComponent(etqNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(contentPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contentPrincipalLayout.createSequentialGroup()
                         .addComponent(etqPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(campoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(contentPrincipalLayout.createSequentialGroup()
+                        .addComponent(etqNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(contentPrincipalLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(contentPrincipalLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(74, 74, 74)
                 .addComponent(btnCancelar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRegistrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnModificar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         contentPrincipalLayout.setVerticalGroup(
@@ -196,15 +197,15 @@ public class ModificarProductos extends javax.swing.JFrame {
                 .addGroup(contentPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(etqNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(contentPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(etqPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(contentPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40))
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(110, 110, 110))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -219,7 +220,8 @@ public class ModificarProductos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(contentTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 270, Short.MAX_VALUE))
+                .addComponent(contentPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -231,39 +233,46 @@ public class ModificarProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String codigo = campoId.getText();
-        Persona temporal = null;
+        String id = campoId.getText();
+        Producto temporal = ( this.ventanaMenu.database.buscarProducto(id)); 
         
         if (temporal != null) {
+            jLabel1.setText("Producto encontrado:");
             habilitarCampo(campoNombre);
             habilitarCampo(campoPrecio);
-            campoNombre.setText(temporal.getNombres());
-            campoPrecio.setText(temporal.getApellidos());
+            campoNombre.setText(temporal.getNombre());
+            campoPrecio.setText(""+temporal.getPrecio());
             campoNombre.requestFocus();
-            btnRegistrar.setEnabled(true);
+            btnModificar.setEnabled(true);
         }else{
             Alert alerta = new Alert("NO EXISTE", "La cedula no esta registrada.", "error");
+            jLabel1.setText("Producto NO encontrado:");
             campoNombre.setText("");
             campoPrecio.setText("");
             deshabilitarCampo(campoNombre);
             deshabilitarCampo(campoPrecio);
             campoId.requestFocus();
-            btnRegistrar.setEnabled(false);
+            btnModificar.setEnabled(false);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        String codigo = campoId.getText();
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        String id = campoId.getText();
+        int num_id = Integer.parseInt(id);
         String nombre = campoNombre.getText();
         String precio = campoPrecio.getText();
+        int num_precio = Integer.parseInt(precio);
         
-        if (!codigo.equals("") && !nombre.equals("") && !precio.equals("")) {
+        Producto temporal = new Producto( num_id, nombre, num_precio);
+        
+        if (!id.equals("") && !nombre.equals("") && !precio.equals("")) {
+            boolean proceso = (this.ventanaMenu.database.editarProducto(temporal));
             Alert alerta = new Alert("EXITO", "Datos editados correctamente.", "success");
         }else{
             Alert alerta = new Alert("Datos Inválidos", "Todos los campos son obligatorios.", "error");
             validarTodosInputs();
         }
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     private void eventoKeyCampos(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_eventoKeyCampos
         JTextField campo = (JTextField) evt.getSource();
@@ -277,7 +286,7 @@ public class ModificarProductos extends javax.swing.JFrame {
         deshabilitarCampo(campoNombre);
         deshabilitarCampo(campoPrecio);
         campoId.requestFocus();
-        btnRegistrar.setEnabled(false);
+        btnModificar.setEnabled(false);
     }//GEN-LAST:event_eventoKeyCedula
 
     public void deshabilitarCampo(JTextField campo){
@@ -322,7 +331,7 @@ public class ModificarProductos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JTextField campoId;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoPrecio;

@@ -7,10 +7,12 @@ import ModuloUsuarios.ModificarUsuario;
 import Clases.Persona;
 import Clases.Producto;
 import ModuloFacturas.CrearFactura;
+import ModuloFacturas.ListarFacturas;
 import ModuloProductos.CrearProducto;
 import ModuloProductos.ListarProductos;
 import ModuloProductos.ModificarProductos;
 import ModuloUsuarios.EliminarUsuario;
+import ModuloProductos.EliminarProductos;
 import java.awt.Toolkit;
 import javax.swing.*;
 
@@ -77,7 +79,7 @@ public class Menu extends JFrame {
         etiquetaFactura = new javax.swing.JLabel();
         contentFacturas = new javax.swing.JPanel();
         btnCrearFactura = new javax.swing.JButton();
-        btnModificarFactura = new javax.swing.JButton();
+        btnListarFactura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Usuarios");
@@ -295,6 +297,11 @@ public class Menu extends JFrame {
         btnEliminarProducto.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminarProducto.setText("Eliminar");
         btnEliminarProducto.setFocusable(false);
+        btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarProductoActionPerformed(evt);
+            }
+        });
 
         btnListarProductos.setBackground(new java.awt.Color(0, 0, 153));
         btnListarProductos.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -352,14 +359,14 @@ public class Menu extends JFrame {
             }
         });
 
-        btnModificarFactura.setBackground(new java.awt.Color(0, 0, 153));
-        btnModificarFactura.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        btnModificarFactura.setForeground(new java.awt.Color(255, 255, 255));
-        btnModificarFactura.setText("LISTAR");
-        btnModificarFactura.setFocusable(false);
-        btnModificarFactura.addActionListener(new java.awt.event.ActionListener() {
+        btnListarFactura.setBackground(new java.awt.Color(0, 0, 153));
+        btnListarFactura.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        btnListarFactura.setForeground(new java.awt.Color(255, 255, 255));
+        btnListarFactura.setText("LISTAR");
+        btnListarFactura.setFocusable(false);
+        btnListarFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificarFacturaActionPerformed(evt);
+                btnListarFacturaActionPerformed(evt);
             }
         });
 
@@ -371,7 +378,7 @@ public class Menu extends JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(btnCrearFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnModificarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnListarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         contentFacturasLayout.setVerticalGroup(
@@ -380,7 +387,7 @@ public class Menu extends JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(contentFacturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCrearFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModificarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnListarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -515,9 +522,12 @@ public class Menu extends JFrame {
         ventana.setVisible(true);
     }//GEN-LAST:event_btnCrearFacturaActionPerformed
 
-    private void btnModificarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarFacturaActionPerformed
-       
-    }//GEN-LAST:event_btnModificarFacturaActionPerformed
+    private void btnListarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarFacturaActionPerformed
+        setVisible(false);
+        
+        ListarFacturas ventana = new ListarFacturas(this);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btnListarFacturaActionPerformed
 
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
         EliminarUsuario ventana = new EliminarUsuario(this, this.listaClientes, "CLIENTES");
@@ -530,6 +540,13 @@ public class Menu extends JFrame {
         ventana.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_btnEliminarVendedorActionPerformed
+
+    private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
+   
+        EliminarProductos ventana = new EliminarProductos(this, this.listaProductos);
+        ventana.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_btnEliminarProductoActionPerformed
     
                  
       
@@ -559,10 +576,10 @@ public class Menu extends JFrame {
     private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnEliminarVendedor;
     private javax.swing.JButton btnListarClientes;
+    private javax.swing.JButton btnListarFactura;
     private javax.swing.JButton btnListarProductos;
     private javax.swing.JButton btnListarVendedores;
     private javax.swing.JButton btnModificarCliente;
-    private javax.swing.JButton btnModificarFactura;
     private javax.swing.JButton btnModificarProducto;
     private javax.swing.JButton btnModificarVendedor;
     private javax.swing.JPanel contentClientes;

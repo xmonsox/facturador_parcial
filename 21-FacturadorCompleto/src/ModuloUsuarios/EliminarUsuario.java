@@ -361,7 +361,9 @@ public class EliminarUsuario extends javax.swing.JFrame {
 
         if (!cedula.equals("") && !nombres.equals("") && !apellidos.equals("") && !direccion.equals("") && !telefono.equals("") && !email.equals("") ) {
             boolean proceso = (this.tipoLista.equalsIgnoreCase("CLIENTES"))? this.ventanaMenu.database.eliminarCliente(temporal) : this.ventanaMenu.database.eliminarVendedor(temporal);
-            Alert alerta = new Alert("EXITO", "Datos eliminados correctamente.", "success");
+            this.ventanaMenu.setVisible(true);
+            Alert alerta = new Alert("EXITO", "Usuario Eliminado.", "success");
+            dispose();  
         }else{
             Alert alerta = new Alert("Datos Inválidos", "Todos los campos son obligatorios.", "error");
             validarTodosInputs();

@@ -46,7 +46,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
         etqEmail = new javax.swing.JLabel();
         campoEmail = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
-        btnRegistrar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
@@ -166,15 +166,15 @@ public class ModificarUsuario extends javax.swing.JFrame {
             }
         });
 
-        btnRegistrar.setBackground(new java.awt.Color(0, 0, 153));
-        btnRegistrar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setText("MODIFICAR");
-        btnRegistrar.setEnabled(false);
-        btnRegistrar.setFocusable(false);
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        btnModificar.setBackground(new java.awt.Color(0, 0, 153));
+        btnModificar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setText("MODIFICAR");
+        btnModificar.setEnabled(false);
+        btnModificar.setFocusable(false);
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
+                btnModificarActionPerformed(evt);
             }
         });
 
@@ -239,7 +239,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnCancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRegistrar)))
+                        .addComponent(btnModificar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(contentPrincipalLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
@@ -280,7 +280,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
                     .addComponent(campoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(contentPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
@@ -324,7 +324,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
             campoDireccion.setText(temporal.getDireccion());
             campoEmail.setText(temporal.getEmail());
             campoNombres.requestFocus();
-            btnRegistrar.setEnabled(true);
+            btnModificar.setEnabled(true);
         }else{
             Alert alerta = new Alert("NO EXISTE", "La cedula no esta registrada.", "error");
             campoNombres.setText("");
@@ -338,11 +338,11 @@ public class ModificarUsuario extends javax.swing.JFrame {
             deshabilitarCampo(campoDireccion);
             deshabilitarCampo(campoEmail);
             campoCedula.requestFocus();
-            btnRegistrar.setEnabled(false);
+            btnModificar.setEnabled(false);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         String cedula = campoCedula.getText();
         String nombres = campoNombres.getText();
         String apellidos = campoApellidos.getText();
@@ -358,7 +358,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
             Alert alerta = new Alert("Datos Inválidos", "Todos los campos son obligatorios.", "error");
             validarTodosInputs();
         }
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     private void eventoKeyCampos(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_eventoKeyCampos
         JTextField campo = (JTextField) evt.getSource();
@@ -378,7 +378,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
         deshabilitarCampo(campoDireccion);
         deshabilitarCampo(campoEmail);
         campoCedula.requestFocus();
-        btnRegistrar.setEnabled(false);
+        btnModificar.setEnabled(false);
     }//GEN-LAST:event_eventoKeyCedula
 
     public void deshabilitarCampo(JTextField campo){
@@ -431,7 +431,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JTextField campoApellidos;
     private javax.swing.JTextField campoCedula;
     private javax.swing.JTextField campoDireccion;
