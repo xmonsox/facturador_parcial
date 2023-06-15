@@ -353,7 +353,9 @@ public class ModificarUsuario extends javax.swing.JFrame {
         
         if (!cedula.equals("") && !nombres.equals("") && !apellidos.equals("") && !direccion.equals("") && !telefono.equals("") && !email.equals("") ) {
             boolean proceso = (this.tipoLista.equalsIgnoreCase("CLIENTES"))? this.ventanaMenu.database.editarCliente(temporal) : this.ventanaMenu.database.editarVendedor(temporal);
-            Alert alerta = new Alert("EXITO", "Datos editados correctamente.", "success");
+            this.ventanaMenu.setVisible(true);
+            Alert alerta = new Alert("EXITO", "Datos modificados.", "success");
+            dispose();
         }else{
             Alert alerta = new Alert("Datos Inválidos", "Todos los campos son obligatorios.", "error");
             validarTodosInputs();

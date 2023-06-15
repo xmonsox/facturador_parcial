@@ -147,13 +147,13 @@ public class ModificarProductos extends javax.swing.JFrame {
         contentPrincipalLayout.setHorizontalGroup(
             contentPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contentPrincipalLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addComponent(etqId, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoId, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBuscar)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(contentPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator1)
@@ -267,7 +267,9 @@ public class ModificarProductos extends javax.swing.JFrame {
         
         if (!id.equals("") && !nombre.equals("") && !precio.equals("")) {
             boolean proceso = (this.ventanaMenu.database.editarProducto(temporal));
-            Alert alerta = new Alert("EXITO", "Datos editados correctamente.", "success");
+            this.ventanaMenu.setVisible(true);
+            Alert alerta = new Alert("EXITO", "Producto modificado.", "success");
+            dispose();
         }else{
             Alert alerta = new Alert("Datos Inválidos", "Todos los campos son obligatorios.", "error");
             validarTodosInputs();

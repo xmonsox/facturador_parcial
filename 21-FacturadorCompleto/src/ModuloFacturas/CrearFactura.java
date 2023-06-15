@@ -89,7 +89,8 @@ public class CrearFactura extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         ContenMenu.setBackground(new java.awt.Color(204, 204, 204));
         ContenMenu.setForeground(new java.awt.Color(0, 0, 0));

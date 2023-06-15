@@ -52,7 +52,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         contentTitulo.setBackground(new java.awt.Color(0, 0, 102));
 
@@ -90,7 +90,7 @@ public class EliminarUsuario extends javax.swing.JFrame {
         etqNombres.setText("Nombres:");
         etqNombres.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        campoNombres.setBackground(new java.awt.Color(0, 0, 0));
+        campoNombres.setBackground(new java.awt.Color(255, 255, 255));
         campoNombres.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         campoNombres.setForeground(new java.awt.Color(0, 0, 0));
         campoNombres.setEnabled(false);
@@ -106,7 +106,9 @@ public class EliminarUsuario extends javax.swing.JFrame {
         etqApellidos.setText("Apellidos:");
         etqApellidos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        campoApellidos.setBackground(new java.awt.Color(255, 255, 255));
         campoApellidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        campoApellidos.setForeground(new java.awt.Color(0, 0, 0));
         campoApellidos.setEnabled(false);
         campoApellidos.setMargin(new java.awt.Insets(2, 5, 2, 5));
         campoApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -120,7 +122,9 @@ public class EliminarUsuario extends javax.swing.JFrame {
         etqTelefono.setText("Teléfono:");
         etqTelefono.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        campoTelefono.setBackground(new java.awt.Color(255, 255, 255));
         campoTelefono.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        campoTelefono.setForeground(new java.awt.Color(0, 0, 0));
         campoTelefono.setEnabled(false);
         campoTelefono.setMargin(new java.awt.Insets(2, 5, 2, 5));
         campoTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -134,7 +138,9 @@ public class EliminarUsuario extends javax.swing.JFrame {
         etqDireccion.setText("Dirección:");
         etqDireccion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        campoDireccion.setBackground(new java.awt.Color(255, 255, 255));
         campoDireccion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        campoDireccion.setForeground(new java.awt.Color(0, 0, 0));
         campoDireccion.setEnabled(false);
         campoDireccion.setMargin(new java.awt.Insets(2, 5, 2, 5));
         campoDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -148,7 +154,9 @@ public class EliminarUsuario extends javax.swing.JFrame {
         etqEmail.setText("Email:");
         etqEmail.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        campoEmail.setBackground(new java.awt.Color(255, 255, 255));
         campoEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        campoEmail.setForeground(new java.awt.Color(0, 0, 0));
         campoEmail.setEnabled(false);
         campoEmail.setMargin(new java.awt.Insets(2, 5, 2, 5));
         campoEmail.addKeyListener(new java.awt.event.KeyAdapter() {

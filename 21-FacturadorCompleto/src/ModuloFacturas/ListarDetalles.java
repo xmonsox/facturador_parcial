@@ -55,7 +55,8 @@ public class ListarDetalles extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         textAreaResultado = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
