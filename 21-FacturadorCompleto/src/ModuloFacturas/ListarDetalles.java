@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class ListarDetalles extends javax.swing.JFrame {
@@ -109,6 +110,7 @@ public class ListarDetalles extends javax.swing.JFrame {
         etqTituloFactura.setForeground(new java.awt.Color(0, 0, 0));
         etqTituloFactura.setText("Factura: -");
 
+        textAreaResultado.setEditable(false);
         textAreaResultado.setBackground(new java.awt.Color(255, 255, 255));
         textAreaResultado.setColumns(20);
         textAreaResultado.setForeground(new java.awt.Color(0, 0, 0));
@@ -207,6 +209,9 @@ public class ListarDetalles extends javax.swing.JFrame {
    
    public void imprimirProductos(){
         
+       deshabilitarCampo(campoCedulaCliente);
+       deshabilitarCampo(campoCedulaVendedor);
+       
         
         for(int i = 0; i < arreglo_productos.length; i++){
             if(arreglo_productos[i] != null){
@@ -222,8 +227,15 @@ public class ListarDetalles extends javax.swing.JFrame {
                 break;
             }
         }
-        revalidate();
-        
+        revalidate();  
+    }
+   
+   public void deshabilitarCampo(JTextField campo){
+        JTextField referencia = new JTextField();
+        campo.setBorder( referencia.getBorder() );
+        campo.setEnabled(false);
+        campo.setForeground(Color.WHITE);
+        campo.setBackground(Color.BLACK );
     }
     
     private void campoCedulaVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCedulaVendedorActionPerformed
